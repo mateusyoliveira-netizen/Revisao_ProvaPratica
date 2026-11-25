@@ -1,8 +1,15 @@
 class Produto:
-    
     def __init__(self, nome, preco):
-        self.nome = nome
+        self.__nome = nome
         self.preco = preco
+
+    @property
+    def nome(self):
+        return self.__nome
+    
+    @property
+    def preco(self):
+        return self.__preco
 
     def __str__(self):
         return  (
