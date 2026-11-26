@@ -18,6 +18,9 @@ class Produto:
             valor = 0
         self.__preco = valor
 
+    def calcular_frete(self):
+        return self.preco * 0.1
+
     def __str__(self):
         return  (
             f"Nome: {self.nome} "
@@ -30,3 +33,26 @@ print(p1)
 
 p2 = Produto("Caderno", -5)
 print(p2.preco)
+
+class Alimento(Produto):
+    def __init__(self, nome, preco, validade):
+        super().__init__(nome, preco)
+        self.__validade = validade
+    
+    @property
+    def validade(self):
+        return self.__validade
+
+    def calcular_frete(self):
+        return 5
+    
+a1 = Alimento("Leite", 6.5, "10/12")
+print(a1)
+print(a1.validade)
+
+produtos = [
+    Produto("Caderno", 25.0),
+    Alimento("Leite", 6.5, "10/12"),
+]
+for p in produtos:
+    print(p.nome, "frete:", p.calcular_frete())

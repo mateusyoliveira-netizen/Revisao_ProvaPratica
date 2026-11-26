@@ -26,3 +26,11 @@ print(l1)
 
 l2 = Livro("Teste", "Ana", 0)
 print(l2.paginas)
+
+class LivroDigital(Livro):
+    def __init__(self, titulo, autor, paginas, tamanho_mb):
+        super().__init__(titulo, autor, paginas)
+        self.tamanho_mb = tamanho_mb
+
+d1 = LivroDigital("Python Fácil", "João Silva", 120, 15)
+print(d1)
