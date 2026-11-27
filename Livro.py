@@ -46,3 +46,19 @@ print(d1)
 livros = [l1, d1]
 for l in livros:
     print(l.titulo, "-", l.tempo_leitura(), "min")
+
+class Biblioteca:
+    def __init__(self):
+        self.__livros = []
+
+    def adicionar(self, livro):
+        self.__livros.append(livro)
+
+    def listar(self):
+        for livro in self.__livros:
+            print(livro)
+            
+bib = Biblioteca()
+bib.adicionar(l1)
+bib.adicionar(d1)
+bib.listar()
