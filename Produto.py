@@ -56,3 +56,19 @@ produtos = [
 ]
 for p in produtos:
     print(p.nome, "frete:", p.calcular_frete())
+
+class Estoque:
+    def __init__(self):
+        self.__produtos = []
+
+    def adicionar(self, produto):
+        self.__produtos.append(produto)
+
+    def listar(self):
+        for p in self.__produtos:
+            print(p)
+
+estoque = Estoque()
+estoque.adicionar(Produto("Caderno", 25.0))
+estoque.adicionar(Alimento("Leite", 6.5, "10/12"))
+estoque.listar()
